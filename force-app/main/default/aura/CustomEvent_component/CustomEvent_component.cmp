@@ -1,0 +1,27 @@
+<aura:component controller = "CustomEventController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="event" type="CustomEvent__c[]"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="left-content">
+        <div class="left-content-heading">
+    		<h1>Annual Clock</h1>            
+        </div>
+    </div>
+<div class="parent-content">   
+        <div class="left-content-image">
+    		<img src="{!$Resource.AnnualClock}"/>
+        </div>
+    <div class="right-content">
+        <div class="right-content-heading">
+		    <h2>Upcoming events</h2>
+        </div>
+        <div class="right-content-text">
+            <aura:iteration items="{!v.event}" var="eve">
+                <div>
+                     <p  title="Name">{!eve.Name}</p>                                                                                                            
+                </div>                                
+            </aura:iteration>
+        </div>
+    </div>
+</div>   
+	
+</aura:component>

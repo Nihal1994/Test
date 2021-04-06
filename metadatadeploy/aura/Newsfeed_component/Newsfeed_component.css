@@ -1,0 +1,22 @@
+h2.cNewsfeed_component{
+    padding: 1rem;
+    border-bottom: 1px solid #e4e4e4;
+    color:#094cbf;
+    font-weight: bold;
+}
+.cNewsfeed_component .newsfeed-items {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+}
+.cNewsfeed_component .newsfeed-items p.news-item a {
+    color:#094cbf;
+}
+.cNewsfeed_component {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.cNewsfeed_component .newsfeed-items p.slds-truncate {
+    color: #000000;
+}

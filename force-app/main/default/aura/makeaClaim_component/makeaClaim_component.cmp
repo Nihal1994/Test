@@ -1,0 +1,62 @@
+<aura:component controller="makeaClaim_controller" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="acc" type="Account[]" />
+     <aura:attribute name="name" type="String"/>
+    <aura:attribute name="type" type="String"/>
+    <aura:attribute name="type1" type="String"/>
+    <aura:attribute name="policy" type="String"/>
+    <aura:attribute name="Recordtype" type="String" default="Property"/>
+     <aura:attribute name="DateofIncident" type="Date"/>
+     <aura:attribute name="NotificationDate" type="Date"/>
+     <aura:attribute name="Description" type="String"/>
+     <aura:attribute name="options" type="List" default="[
+    {'label': 'Break-in', 'value': 'Break-in'},                                                     
+    {'label': 'Fire', 'value': 'Fire'},                                                     
+    {'label': 'Fire Alarm', 'value': 'FireAlarm'},
+    {'label': 'Stock damage', 'value': 'Stockdamage'},
+    {'label': 'Water damage', 'value': 'Waterdamage'},
+    {'label': 'Vandalism', 'value': 'Vandalism'},                                                     
+    ]"/> 
+    <aura:attribute name="pol" type="Policy__c[]" />
+    <aura:attribute name="isDisabled" type="Boolean" default="true" />
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="selectedVal" type="String"/>
+    
+   
+    
+    <lightning:select label="Select Household Account" name="select" aura:id="select" value="{!v.selectedValue}" onchange="{!c.onChange}">
+        <option value="none">none</option>
+        <aura:iteration items="{!v.acc}" var="ac">
+             
+            <option value="{!ac.Id}">{!ac.Name}</option>
+           </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select label="Select Policy" name="select2" aura:id="select2" value="{!v.selectedVal}" disabled="{!v.isDisabled}" onchange="{!c.onChange1}">
+        <option value="none">none</option>
+        <aura:iteration items="{!v.pol}" var="p">
+             
+            <option value="{!p.Id}">{!p.Name}</option>
+           </aura:iteration>
+    </lightning:select>
+ <!--<lightning:select label="Select Policy" name="selectpol" aura:id="selectpol" value="{!v.selectedVal}" disabled="{!v.isDisabled}" onchange="{!c.onChange1}">
+        <option value="none">none</option>
+        <aura:iteration items="{!v.pol}" var="p">
+             
+            <option value="{!p.id}">{!p.Name}</option>
+           </aura:iteration>
+    </lightning:select>--> 
+    <lightning:input name="Name" type="text" required="true" value="{!v.name}" label="Name" maxlength="255"/>
+    <lightning:input name="RecordType" value="{!v.Recordtype}" label="Record Type" disabled="true" />
+    <!--<lightning:combobox name="TypeofLoss" option="{!v.options}" placeholder="Select Progress" label="Type of Loss" required="true"/>-->
+    <lightning:combobox name="progress" value=" " label="Type of Loss" placeholder="Select Options" options="{! v.options }" onchange="{!c.onChange2}" required="true"/>
+    <lightning:input name="DateofIncident" type="date" value="{!v.DateofIncident}" label="Date of Incident" required="true"/>
+    <lightning:input name="NotificationDate" type="date" value="{!v.NotificationDate}" label="Notification Date" required="true"/>
+    <lightning:textarea name="Description" type="text" value="{!v.Description}" label="Description" />
+    
+     
+    <button class="button1" onclick="{!c.redirect}">Cancel</button>
+    
+    <button class="button1" onclick="{!c.gotoClaimpage}">Make a Claim</button>
+    
+</aura:component>

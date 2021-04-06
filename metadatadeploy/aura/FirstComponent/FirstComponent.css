@@ -1,0 +1,67 @@
+.cFirstComponent.favorite-buttons-layout {
+    
+     border: 1px solid #e4e4e4;
+}
+.cFirstComponent.favorite-component {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e4e4e4;
+}
+.cFirstComponent.favorite-component h2 {
+    color: #094cbf;
+    font-weight: bold;
+    padding-left: 1rem
+}
+.cFirstComponent.favorite-component p {
+    padding-right: 1rem;
+}
+.favorite-buttons.cFirstComponent {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 3.4em;
+}
+.favorite-buttons.cFirstComponent button.slds-button {
+    width: 46%;
+    margin-left: 0;
+    margin: 1rem 0 0.5rem;
+    border: none;
+    color: #000000;
+    background-color: #dee5f7;
+    border-radius: 4px;
+}
+.cFirstComponent .claims-window-modal {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cFirstComponent .modal-input {
+    flex: 0 0 50%;
+    padding: 1em;
+}
+.cFirstComponent .slds-input-has-icon .slds-input__icon {
+    margin-top: -1.4375rem;
+}
+
+.cFirstComponent .slds-input__icon-group_right {
+    right: 0;
+    top: 98%;
+}
+.cFirstComponent.slds-modal__container{
+     max-width: 70rem !important;
+     width:70% !important;
+ }
+.cFirstComponent .slds-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.cFirstComponent .slds-modal__footer button.slds-button.slds-button_neutral {
+    margin: 1rem 0.5rem .5rem;
+    flex: 0 0 20%;
+}
+
+.THIS .slds-dropdown-trigger .slds-dropdown {
+    height: 150px;
+    overflow: auto;
+}

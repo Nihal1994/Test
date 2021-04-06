@@ -1,0 +1,104 @@
+<aura:component controller = "makeaClaim_controller" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<lightning:quickActionAPI aura:id="quickActionAPI" />
+    <aura:attribute name="openmodel" type="boolean"/>
+    <aura:attribute name="acc" type="Account[]" />
+     <aura:attribute name="name" type="String"/>
+    <aura:attribute name="type" type="String"/>
+    <aura:attribute name="type1" type="String"/>
+    <aura:attribute name="type2" type="String"/>
+    <aura:attribute name="policy" type="String"/>
+    <aura:attribute name="Recordtype" type="String" default="Property"/>
+     <aura:attribute name="DateofIncident" type="Date"/>
+     <aura:attribute name="NotificationDate" type="Date"/>
+     <aura:attribute name="Description" type="String"/>
+     <aura:attribute name="options" type="List" default="[
+    {'label': 'Break-in', 'value': 'Break-in'},                                                     
+    {'label': 'Fire', 'value': 'Fire'},                                                     
+    {'label': 'Fire Alarm', 'value': 'FireAlarm'},
+    {'label': 'Stock damage', 'value': 'Stockdamage'},
+    {'label': 'Water damage', 'value': 'Waterdamage'},
+    {'label': 'Vandalism', 'value': 'Vandalism'},                                                     
+    ]"/> 
+    <aura:attribute name="pol" type="Policy__c[]" />
+    <aura:attribute name="isDisabled" type="Boolean" default="true" />
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="selectedVal" type="String"/>
+    <ltng:require styles="/resource/slds0121/assets/styles/salesforce-lightning-design-system.min.css"/>
+   <aura:dependency resource="markup://force:navigateToList" type="EVENT"/>
+   <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    <div class="favorite-component"> 
+        <h2>Favorites / Most Used</h2>
+        <p>All Time</p>
+    </div>
+    <div class="favorite-buttons">
+         
+     <lightning:button label="Make a claim" onclick="{!c.openmodal}" />
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" aura:id="Modalbox" class="slds-modal">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">                
+                <h2 id="header43" class="slds-text-heading--medium">Add Details for Claim</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--large">
+                
+<div class="claims-window-modal">
+    <div class="modal-input">
+         <lightning:select label="Housing Company" name="select" aura:id="select" value="{!v.selectedValue}" onchange="{!c.onChange}">
+            <option value="none">none</option>
+               <aura:iteration items="{!v.acc}" var="ac">
+                 <option value="{!ac.Id}">{!ac.Name}</option>
+               </aura:iteration>
+        </lightning:select>
+    </div>
+	<div class="modal-input">    
+        <lightning:select label="Policy" name="select2" aura:id="select2" value="{!v.selectedVal}" disabled="{!v.isDisabled}" onchange="{!c.onChange1}">
+            <option value="none">none</option>
+            <aura:iteration items="{!v.pol}" var="p">            
+                <option value="{!p.Id}">{!p.Name}</option>
+            </aura:iteration>
+        </lightning:select>
+    </div>    
+ <!--<lightning:select label="Select Policy" name="selectpol" aura:id="selectpol" value="{!v.selectedVal}" disabled="{!v.isDisabled}" onchange="{!c.onChange1}">
+        <option value="none">none</option>
+        <aura:iteration items="{!v.pol}" var="p">           
+            <option value="{!p.id}">{!p.Name}</option>
+        </aura:iteration>
+    </lightning:select>-->
+    <div class="modal-input">
+   		 <lightning:input name="Name" type="text" required="true" value="{!v.name}" label="Name" maxlength="255"/>
+    </div>
+    <div class="modal-input">
+        <lightning:input name="RecordType" value="{!v.Recordtype}" label="Record Type" disabled="true" />
+    </div>
+        <!--<lightning:combobox name="TypeofLoss" option="{!v.options}" placeholder="Select Progress" label="Type of Loss" required="true"/>-->
+    <div class="modal-input">
+    	<lightning:combobox name="progress" value=" " label="Type of Loss" placeholder="Select Options" options="{! v.options }" onchange="{!c.onChange2}" required="true"/>
+    </div>
+    <div class="modal-input">
+        <lightning:input name="DateofIncident" type="date" value="{!v.DateofIncident}" label="Date of Incident" required="true" dateStyle="short"/>
+    </div>
+	<div class="modal-input">
+        <lightning:input name="NotificationDate" type="date" value="{!v.NotificationDate}" label="Notification Date" required="true"/>
+    </div>
+    <div class="modal-input">
+        <lightning:textarea name="Description" type="text" value="{!v.Description}" label="Description" />
+    </div>
+ </div>
+</div>
+            <div class="slds-modal__footer">
+                <lightning:button variant="neutral" label="Cancel" onclick="{!c.closeModal}" />
+                <lightning:button variant="neutral" onclick="{!c.gotoClaimpage}">Save</lightning:button>   
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop " aura:id="Modalbackdrop"></div>
+       
+     <ui:button label="Update claim info" press="{!c.gotoList}"/>
+    <ui:button label="Order risk services" />
+    <ui:button label="Download insurance manual" />
+    </div>
+      
+    
+       
+    
+</aura:component>

@@ -1,0 +1,38 @@
+<aura:component implements="forceCommunity:themeLayout">
+    <div class="slds-grid slds-wrap">
+        
+  <div class="slds-col slds-size_4-of-12">
+    <div class="slds-col">
+                    <div class="logoContainer"></div>
+                </div>
+  </div>
+  <div class="slds-col slds-size_8-of-12">
+    <div class="slds-col">
+                    <c:Navigation_Howden></c:Navigation_Howden>
+                </div>
+        </div>
+  <div class="slds-col slds-size_6-of-12">
+      <div class="slds-col content">
+    {!v.body}
+      </div>
+  </div>
+  <div class="slds-col slds-size_6-of-12">
+    <div class="slds-col content">
+      {!v.body}
+  </div>
+    </div>
+  <div class="slds-col slds-size_6-of-12">
+      <div class="slds-col content">
+    {!v.body}
+  </div>
+        </div>
+  <div class="slds-col slds-size_6-of-12">
+      <div class="slds-col content">
+    {!v.body}
+  </div>
+        </div>
+    
+    </div>
+
+	
+</aura:component>

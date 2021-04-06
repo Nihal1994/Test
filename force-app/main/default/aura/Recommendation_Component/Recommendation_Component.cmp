@@ -1,0 +1,21 @@
+<aura:component controller = 'InformationController' implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	 <aura:attribute name="info" type="Information__c[]"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="recommendation-component-header">
+        <h2>Howden Finland Recommends</h2>
+        <div>
+            <c:CustomSearch></c:CustomSearch>
+        </div>
+    </div>
+    
+    <div>
+    <aura:iteration items="{!v.info}" var="in">
+        <div class="recommendation-questions">
+             	<p class="description" title="Description">{!in.Name}</p>                                          
+        		<p class="slds-truncate" title="Read More"><a data-infoid="{!in.Id}" onclick = "{!c.navigateToInformation}">Read More</a></p>               
+        </div>
+                          
+              </aura:iteration>
+        </div>
+                           
+</aura:component>

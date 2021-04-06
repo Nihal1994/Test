@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Property</fullName>
+    <active>true</active>
+    <label>Property</label>
+    <picklistValues>
+        <picklist>Type_of_Loss__c</picklist>
+        <values>
+            <fullName>Break-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire Alarm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stock damage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vandalism</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water damage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

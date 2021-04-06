@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Loss__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Loss</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Break-in</fullName>
+                <default>false</default>
+                <label>Break-in</label>
+            </value>
+            <value>
+                <fullName>Fire</fullName>
+                <default>false</default>
+                <label>Fire</label>
+            </value>
+            <value>
+                <fullName>Fire Alarm</fullName>
+                <default>false</default>
+                <label>Fire Alarm</label>
+            </value>
+            <value>
+                <fullName>Stock damage</fullName>
+                <default>false</default>
+                <label>Stock damage</label>
+            </value>
+            <value>
+                <fullName>Water damage</fullName>
+                <default>false</default>
+                <label>Water damage</label>
+            </value>
+            <value>
+                <fullName>Vandalism</fullName>
+                <default>false</default>
+                <label>Vandalism</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+.THIS {
+}
+.recommendation-component-header.cRecommendation_Component {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e4e4e4;
+}
+.recommendation-component-header.cRecommendation_Component h2 {
+    padding-bottom: 0.5rem;
+    color:#094cbf;
+    font-weight: bold;
+    padding-left: 1rem
+}
+.cRecommendation_Component .recommendation-questions {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+.cRecommendation_Component .recommendation-questions p {
+    color: #094cbf;
+}
+
+.recommendation-component-header.cRecommendation_Component span.slds-icon_container.slds-icon-utility-search.slds-input__icon.slds-input__icon_right.iconheight {
+    padding-right: 2rem;
+}
+.cRecommendation_Component .recommendation-questions .slds-truncate a {
+    color: #000000;
+    background-color: #dee5f7;
+    padding: 0.45rem 1.25rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 1rem;
+}

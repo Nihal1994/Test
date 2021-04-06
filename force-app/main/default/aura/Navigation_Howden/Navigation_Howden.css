@@ -1,0 +1,16 @@
+.THIS li {
+    padding: 1rem 0 .5rem 0;
+    margin: 0 1.5rem;
+}
+.THIS li a {
+    padding: 0 0 0.25rem 0;
+    border: 0;
+    font-size: 15px;
+}
+.THIS li.slds-is-active {
+    border-bottom: 2px solid #094cbf;
+}
+.THIS li a.slds-navigation-list--vertical__action {
+    color: #094cbf;
+    font-weight: bold;
+}

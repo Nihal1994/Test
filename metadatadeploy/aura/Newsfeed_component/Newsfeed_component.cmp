@@ -1,0 +1,16 @@
+<aura:component controller="Newsfeedcontroller" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+<aura:attribute name="news" type="Newsfeed__c[]"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <h2>Newsfeed</h2>
+     <div>
+    <aura:iteration items="{!v.news}" var="new">
+        <div class="newsfeed-items">
+             <p class="news-item" title="Date"><a data-newid="{!new.Id}" onclick = "{!c.navigateToNewsFeed}">{!new.Name}</a></p>                                          
+             <p class="slds-truncate" title="PublishedDate">{!new.PublishedDate__c}</p>                                                      
+        </div>
+                                
+              </aura:iteration>
+        </div>
+                           
+</aura:component>
